@@ -15,10 +15,10 @@ const StarAnimation = keyframes`
 const getRandomArbitrary = (min, max) => parseInt(Math.random() * (max - min) + min, 10);
 
 const MultipleBoxShadow = (n) => {
-  let css = `${getRandomArbitrary(0, 2000)}px ${getRandomArbitrary(0, 2000)}px ${colors.lines}`;
+  let css = `${getRandomArbitrary(0, 3840)}px ${getRandomArbitrary(0, 2160)}px ${colors.lines}`;
 
   for (let i = 2; i <= n; i += 1) {
-    css += `, ${getRandomArbitrary(0, 2000)}px ${getRandomArbitrary(0, 2000)}px ${colors.lines}`;
+    css += `, ${getRandomArbitrary(0, 3840)}px ${getRandomArbitrary(0, 2160)}px ${colors.lines}`;
   }
 
   return css;

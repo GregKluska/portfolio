@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { up } from 'styled-breakpoints';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
   width: 260px;
@@ -33,13 +35,24 @@ const DrawerTrigger = styled.span`
 
   position: absolute;
   left: 100%;
-  top: 0;
+  top: 20px;
 
-  background: white;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: ${({ theme }) => theme.colors.backgroundSecondary};
 
   ${up('xl')} {
     display: none;
   }
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 27px;
 `;
 
 const Drawer = () => {
@@ -47,7 +60,9 @@ const Drawer = () => {
 
   return (
     <Wrapper active={active}>
-      <DrawerTrigger onClick={() => setActive(!active)}>aaaas</DrawerTrigger>
+      <DrawerTrigger onClick={() => setActive(!active)}>
+        <Icon icon={active ? faTimes : faBars} />
+      </DrawerTrigger>
       aababa
     </Wrapper>
   );
