@@ -18,5 +18,18 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@src': 'src',
+          '@components': 'src/components',
+          '@styles': 'src/styles',
+          '@templates': 'src/templates',
+          '@util': 'src/util',
+        },
+        extensions: ['js'],
+      },
+    },
   ],
 };

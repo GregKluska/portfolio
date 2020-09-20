@@ -2,11 +2,12 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import MainTemplate from '../templates/MainTemplate';
+import Hero from '../components/Content/Hero';
 
 const Home = ({ path }) => {
   return (
     <MainTemplate path={path}>
-      <div> a </div>
+      <Hero />
     </MainTemplate>
   );
 };

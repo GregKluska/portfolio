@@ -9,11 +9,19 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
+const Container = styled.div`
+  position: relative;
+  z-index: 998;
+
+  display: flex;
+  flex-direction: column;
+`;
+
 const Content = ({ path, children }) => {
   return (
     <Wrapper>
       <Background stars={path === '/'} />
-      {children}
+      <Container>{children}</Container>
     </Wrapper>
   );
 };

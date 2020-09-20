@@ -8,11 +8,17 @@ import Drawer from '../components/Drawer';
 import Content from '../components/Content/Content';
 
 const GlobalStyles = createGlobalStyle`
-    body {
-      font-family: 'Open Sans';
-      color: ${theme.colors.primary};
-      background: ${theme.colors.background};
-    }
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    font-family: 'Open Sans';
+    color: ${theme.colors.primary};
+    background: ${theme.colors.background};
+  }
 `;
 
 const Wrapper = styled.div`

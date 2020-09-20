@@ -4,5 +4,16 @@
   "rules": {
     "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["@components", "./src/components"],
+        ["@src", "./src/src"],
+        ["@styles", "./src/styles"],
+        ["@templates", "./src/templates"],
+        ["@util", "./src/util"]
+      ]
+    }
   }
 }
