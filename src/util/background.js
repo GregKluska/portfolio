@@ -124,7 +124,6 @@ const background = () => {
         <Line />
         <Line />
         <Line />
-        <Line />
       </LineWrapper>
     </>
   );

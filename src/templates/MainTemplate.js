@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 
 import theme from '../styles/theme';
-import Background from '../util/background';
+import Drawer from '../components/Drawer/Drawer';
+import Content from '../components/Content/Content';
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -12,13 +13,22 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+`;
+
 const MainTemplate = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyles />
-      <Background />
-      {children}
+      <Wrapper>
+        <Drawer />
+        <Content>{children}</Content>
+      </Wrapper>
     </ThemeProvider>
   );
 };
