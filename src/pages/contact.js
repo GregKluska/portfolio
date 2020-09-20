@@ -1,11 +1,18 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
 import MainTemplate from '../templates/MainTemplate';
 
-export default function Contact() {
+const Contact = ({ path }) => {
   return (
-    <MainTemplate>
+    <MainTemplate path={path}>
       <div> a </div>
     </MainTemplate>
   );
-}
+};
+
+Contact.propTypes = {
+  path: PropTypes.string.isRequired,
+};
+
+export default Contact;

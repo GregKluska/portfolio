@@ -1,11 +1,18 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
 import MainTemplate from '../templates/MainTemplate';
 
-export default function Home() {
+const Home = ({ path }) => {
   return (
-    <MainTemplate>
+    <MainTemplate path={path}>
       <div> a </div>
     </MainTemplate>
   );
-}
+};
+
+Home.propTypes = {
+  path: PropTypes.string.isRequired,
+};
+
+export default Home;

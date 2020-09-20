@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import colors from '../styles/colors';
 
@@ -111,14 +112,16 @@ const Line = styled.span`
   height: 100%;
 `;
 
-const background = () => {
+const background = ({ stars }) => {
   return (
     <>
-      <StarWrapper>
-        <SmallStar />
-        <MediumStar />
-        <LargeStar />
-      </StarWrapper>
+      {stars && (
+        <StarWrapper>
+          <SmallStar />
+          <MediumStar />
+          <LargeStar />
+        </StarWrapper>
+      )}
       <LineWrapper>
         <Line />
         <Line />
@@ -127,6 +130,14 @@ const background = () => {
       </LineWrapper>
     </>
   );
+};
+
+background.defaultProps = {
+  stars: true,
+};
+
+background.propTypes = {
+  stars: PropTypes.bool,
 };
 
 export default background;

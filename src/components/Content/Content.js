@@ -9,16 +9,17 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const Content = ({ children }) => {
+const Content = ({ path, children }) => {
   return (
     <Wrapper>
-      <Background />
+      <Background stars={path === '/'} />
       {children}
     </Wrapper>
   );
 };
 
 Content.propTypes = {
+  path: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 

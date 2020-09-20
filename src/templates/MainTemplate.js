@@ -22,20 +22,21 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-const MainTemplate = ({ children }) => {
+const MainTemplate = ({ path, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyles />
       <Wrapper>
         <Drawer />
-        <Content>{children}</Content>
+        <Content path={path}>{children}</Content>
       </Wrapper>
     </ThemeProvider>
   );
 };
 
 MainTemplate.propTypes = {
+  path: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 
