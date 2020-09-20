@@ -5,12 +5,18 @@ import { up } from 'styled-breakpoints';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+import Avatar from './Avatar';
+import Menu from './Menu';
+
 const Wrapper = styled.div`
   width: 260px;
   height: 100vh;
 
   position: absolute;
   z-index: 999;
+
+  display: flex;
+  flex-direction: column;
 
   background: ${({ theme }) => theme.colors.backgroundSecondary};
   border-right: 1px solid ${({ theme }) => theme.colors.border};
@@ -55,6 +61,20 @@ const Icon = styled(FontAwesomeIcon)`
   font-size: 27px;
 `;
 
+const ContentWrapper = styled.div`
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: center;
+
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+`;
+
+const MenuWrapper = styled(ContentWrapper)`
+  align-items: center;
+  flex-grow: 1;
+`;
+
 const Drawer = () => {
   const [active, setActive] = useState(false);
 
@@ -63,7 +83,13 @@ const Drawer = () => {
       <DrawerTrigger onClick={() => setActive(!active)}>
         <Icon icon={active ? faTimes : faBars} />
       </DrawerTrigger>
-      aababa
+      <ContentWrapper>
+        <Avatar />
+      </ContentWrapper>
+      <MenuWrapper>
+        <Menu />
+      </MenuWrapper>
+      <ContentWrapper>bb</ContentWrapper>
     </Wrapper>
   );
 };

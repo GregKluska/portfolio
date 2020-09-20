@@ -4,12 +4,14 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 
 import theme from '../styles/theme';
-import Drawer from '../components/Drawer/Drawer';
+import Drawer from '../components/Drawer';
 import Content from '../components/Content/Content';
 
 const GlobalStyles = createGlobalStyle`
     body {
-        background: ${theme.colors.background};
+      font-family: 'Open Sans';
+      color: ${theme.colors.primary};
+      background: ${theme.colors.background};
     }
 `;
 
