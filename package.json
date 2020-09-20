@@ -41,7 +41,7 @@
   "lint-staged": {
     "./src/*.{js,jsx,ts,tsx}": [
       "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-      "eslint src/*.js --fix-dry-run",
+      "eslint src/*.js --fix-dry-run"
     ]
   },
   "repository": {
