@@ -1,5 +1,7 @@
-import React from "react"
+import React from 'react';
+
+import MainTemplate from '../templates/MainTemplate';
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return <MainTemplate>Hello world!</MainTemplate>;
 }
