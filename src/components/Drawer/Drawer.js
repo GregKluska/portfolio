@@ -26,10 +26,21 @@ const Wrapper = styled.div`
   ${({ active }) => active === true && `transform: translateX(0);`}
 
   ${up('xl')} {
-    position: relative;
+    position: fixed;
     transform: translateX(0);
   }
 
+  ${up('xxl')} {
+    width: 300px;
+  }
+`;
+
+const DesktopPositioning = styled.div`
+  display: none;
+  width: 260px;
+  ${up('xl')} {
+    display: block;
+  }
   ${up('xxl')} {
     width: 300px;
   }
@@ -79,18 +90,21 @@ const Drawer = () => {
   const [active, setActive] = useState(false);
 
   return (
-    <Wrapper active={active}>
-      <DrawerTrigger onClick={() => setActive(!active)}>
-        <Icon icon={active ? faTimes : faBars} />
-      </DrawerTrigger>
-      <ContentWrapper>
-        <Avatar />
-      </ContentWrapper>
-      <MenuWrapper>
-        <Menu />
-      </MenuWrapper>
-      <ContentWrapper>bb</ContentWrapper>
-    </Wrapper>
+    <>
+      <DesktopPositioning />
+      <Wrapper active={active}>
+        <DrawerTrigger onClick={() => setActive(!active)}>
+          <Icon icon={active ? faTimes : faBars} />
+        </DrawerTrigger>
+        <ContentWrapper>
+          <Avatar />
+        </ContentWrapper>
+        <MenuWrapper>
+          <Menu />
+        </MenuWrapper>
+        <ContentWrapper>bb</ContentWrapper>
+      </Wrapper>
+    </>
   );
 };
 
