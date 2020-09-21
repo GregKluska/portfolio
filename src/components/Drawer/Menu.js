@@ -24,6 +24,7 @@ const Item = styled(Link)`
   font-weight: 400;
   letter-spacing: 2px;
   line-height: 1.8rem;
+  font-size: 0.7rem;
 
   text-align: center;
   text-transform: uppercase;
