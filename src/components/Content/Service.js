@@ -9,8 +9,14 @@ const Wrapper = styled.div`
   ${mixins.makeColReady()}
   ${mixins.makeCol()}
 
-    ${up('md')} {
+  padding-top:${({ theme }) => theme.gutterSize.xs / 2}px;
+  padding-bottom: ${({ theme }) => theme.gutterSize.xs / 2}px;
+
+  ${up('md')} {
     ${mixins.makeCol(1, 2)}
+
+    padding-top:${({ theme }) => theme.gutterSize.md / 2}px;
+    padding-bottom: ${({ theme }) => theme.gutterSize.md / 2}px;
   }
 
   ${up('lg')} {

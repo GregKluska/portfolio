@@ -51,6 +51,24 @@ const Container = styled.div`
 
 const Row = styled.div`
   ${mixins.makeRow()}
+
+  &.services-section {
+    ${({ theme }) => {
+      return `
+        margin-top: -${theme.gutterSize.xs / 2}px;
+        margin-bottom: -${theme.gutterSize.xs / 2}px;
+      `;
+    }}
+
+    ${up('md')} {
+      ${({ theme }) => {
+        return `
+          margin-top: -${theme.gutterSize.md / 2}px;
+          margin-bottom: -${theme.gutterSize.md / 2}px;
+        `;
+      }}
+    }
+  }
 `;
 
 const Image = styled(Img)`
@@ -79,6 +97,14 @@ const Image = styled(Img)`
 const HalfCol = styled.div`
   ${mixins.makeColReady()}
   ${mixins.makeCol()}
+
+  &.aboutme-section {
+    padding-top: 30px;
+    ${up('lg')} {
+      padding-top: 0;
+    }
+  }
+
   ${up('lg')} {
     ${mixins.makeCol(1, 2)}
   }
@@ -150,7 +176,7 @@ const About = ({ path }) => {
           <HalfCol>
             <Image fluid={image.file.childImageSharp.fluid} />
           </HalfCol>
-          <HalfCol>
+          <HalfCol className="aboutme-section">
             <Title>
               I am
               <span className="color-secondary"> Greg Kluska</span>
@@ -180,7 +206,7 @@ const About = ({ path }) => {
       </Container>
       <Container>
         <SectionTitle>Services</SectionTitle>
-        <Row>
+        <Row className="services-section">
           <Service>
             <Icon icon={faPalette} />
             <h5>Web Design</h5>

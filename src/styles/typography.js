@@ -1,7 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
 import { up } from 'styled-breakpoints';
 
-const Typography = createGlobalStyle`  
+const Typography = createGlobalStyle`
+
+    body {
+        font-size: 15px;
+        ${up('md')} {
+            font-size: 16px;
+        }
+        ${up('lg')} {
+            font-size: 18px;
+        }
+
+    }
+
     h1,
     h2,
     h3,

@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   width: 260px;
   height: 100vh;
 
-  position: absolute;
+  position: fixed;
   z-index: 999;
 
   display: flex;
@@ -26,7 +26,6 @@ const Wrapper = styled.div`
   ${({ active }) => active === true && `transform: translateX(0);`}
 
   ${up('xl')} {
-    position: fixed;
     transform: translateX(0);
   }
 
