@@ -171,12 +171,12 @@ const About = ({ path }) => {
   return (
     <MainTemplate path={path}>
       <Container>
-        <SectionTitle>About me</SectionTitle>
+        <SectionTitle data-sal="slide-up">About me</SectionTitle>
         <Row>
           <HalfCol>
-            <Image fluid={image.file.childImageSharp.fluid} />
+            <Image data-sal="slide-up" fluid={image.file.childImageSharp.fluid} />
           </HalfCol>
-          <HalfCol className="aboutme-section">
+          <HalfCol data-sal="slide-up" className="aboutme-section">
             <Title>
               I am
               <span className="color-secondary"> Greg Kluska</span>
@@ -205,23 +205,23 @@ const About = ({ path }) => {
         </Row>
       </Container>
       <Container>
-        <SectionTitle>Services</SectionTitle>
+        <SectionTitle data-sal="slide-up">Services</SectionTitle>
         <Row className="services-section">
-          <Service>
+          <Service data-sal="slide-up" data-sal-delay="100">
             <Icon icon={faPalette} />
             <h5>Web Design</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.
             </p>
           </Service>
-          <Service>
+          <Service data-sal="slide-up" data-sal-delay="200">
             <Icon icon={faCode} />
             <h5>Web Development</h5>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.
             </p>
           </Service>
-          <Service>
+          <Service data-sal="slide-up" data-sal-delay="300">
             <Icon icon={faMobileAlt} />
             <h5>Mobile Application</h5>
             <p>
@@ -231,9 +231,9 @@ const About = ({ path }) => {
         </Row>
       </Container>
       <Container>
-        <SectionTitle>Reviews</SectionTitle>
+        <SectionTitle data-sal="slide-up">Reviews</SectionTitle>
         <Row>
-          <FullCol>
+          <FullCol data-sal="slide-up">
             <SliderWrapper>
               {/* eslint-disable-next-line react/jsx-props-no-spreading */}
               <Slider {...sliderSettings}>

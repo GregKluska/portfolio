@@ -31,5 +31,6 @@ module.exports = {
         extensions: ['js'],
       },
     },
+    `gatsby-plugin-scroll-reveal`,
   ],
 };

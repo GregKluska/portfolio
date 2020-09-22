@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -58,9 +59,9 @@ const Container = styled.div`
   }
 `;
 
-const Service = ({ children }) => {
+const Service = ({ children, ...props }) => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <Container>{children}</Container>
     </Wrapper>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -54,9 +55,9 @@ const Shadow = styled.span`
   white-space: nowrap;
 `;
 
-const SectionTitle = ({ children }) => {
+const SectionTitle = ({ children, ...props }) => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <Heading>{children}</Heading>
       <Shadow>{children}</Shadow>
     </Wrapper>

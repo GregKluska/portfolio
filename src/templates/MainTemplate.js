@@ -20,7 +20,6 @@ const GlobalStyles = createGlobalStyle`
     color: ${theme.colors.primary};
     background: ${theme.colors.background};
 
-    font-size: 18px;
     line-height: 1.8rem;
     font-weight: 400;
   }
