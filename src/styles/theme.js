@@ -9,7 +9,6 @@ export default {
     md: 40,
   },
   containerSize: {
-    xs: '100%',
     sm: '540px',
     md: '720px',
     lg: '960px',

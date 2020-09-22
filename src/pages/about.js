@@ -14,6 +14,8 @@ import { up } from 'styled-breakpoints';
 import MainTemplate from '../templates/MainTemplate';
 import SectionTitle from '../components/Content/SectionTitle';
 import Service from '../components/Content/Service';
+import Slider from '../components/Content/Slider';
+import Review from '../components/Content/Review';
 
 const Icon = styled(FontAwesomeIcon)`
   margin-bottom: 20px;
@@ -33,6 +35,17 @@ const Container = styled.div`
   }
   ${up('lg')} {
     padding-top: 120px;
+  }
+
+  &:last-of-type {
+    padding-bottom: 80px;
+
+    ${up('md')} {
+      padding-bottom: 100px;
+    }
+    ${up('lg')} {
+      padding-bottom: 120px;
+    }
   }
 `;
 
@@ -71,6 +84,25 @@ const HalfCol = styled.div`
   }
 `;
 
+const FullCol = styled.div`
+  ${mixins.makeColReady()}
+  ${mixins.makeCol()}
+
+
+
+  width: 100%;
+`;
+
+const SliderWrapper = styled.div`
+  margin-left: -${({ theme }) => theme.gutterSize.xs / 2}px;
+  margin-right: -${({ theme }) => theme.gutterSize.xs / 2}px;
+
+  ${up('md')} {
+    margin-left: -${({ theme }) => theme.gutterSize.md / 2}px;
+    margin-right: -${({ theme }) => theme.gutterSize.md / 2}px;
+  }
+`;
+
 const Title = styled.h3`
   margin-top: -12px;
 `;
@@ -93,6 +125,23 @@ const About = ({ path }) => {
     }
   `);
 
+  const sliderSettings = {
+    dots: false,
+    arrows: false,
+    speed: 500,
+    autoplay: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <MainTemplate path={path}>
       <Container>
@@ -107,8 +156,7 @@ const About = ({ path }) => {
               <span className="color-secondary"> Greg Kluska</span>
             </Title>
             <p>
-              I am a frontend web developer. I can provide clean code and pixel perfect design. I
-              also make website more &amp; more interactive with web animations.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod
             </p>
             <List>
               <li>
@@ -158,7 +206,35 @@ const About = ({ path }) => {
       </Container>
       <Container>
         <SectionTitle>Reviews</SectionTitle>
-        <Row></Row>
+        <Row>
+          <FullCol>
+            <SliderWrapper>
+              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+              <Slider {...sliderSettings}>
+                <Review author="Greg Kluska" authorPosition="Client">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione
+                  quod.
+                </Review>
+                <Review author="Greg Kluska" authorPosition="Web Developer, Abc Company">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione
+                  quod.
+                </Review>
+                <Review author="Greg Kluska" authorPosition="Fiverr Client">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione
+                  quod.
+                </Review>
+                <Review author="Greg Kluska">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione
+                  quod.
+                </Review>
+                <Review author="Greg Kluska">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione
+                  quod.
+                </Review>
+              </Slider>
+            </SliderWrapper>
+          </FullCol>
+        </Row>
       </Container>
     </MainTemplate>
   );

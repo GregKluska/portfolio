@@ -26,6 +26,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-slick": "^0.27.11",
     "styled-breakpoints": "^8.1.1",
     "styled-components": "^5.2.0",
     "styled-normalize": "^8.0.7"
