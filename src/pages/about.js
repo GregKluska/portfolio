@@ -17,36 +17,13 @@ import Service from '../components/Content/Service';
 import Slider from '../components/Content/Slider';
 import Review from '../components/Content/Review';
 
+import Container from '../components/Content/Container';
+
 const Icon = styled(FontAwesomeIcon)`
   margin-bottom: 20px;
   display: inline-block;
   color: #037fff;
   font-size: 2.5rem;
-`;
-
-const Container = styled.div`
-  ${mixins.makeContainer()}
-  ${mixins.makeContainerMaxWidths()}
-
-  padding-top: 80px;
-
-  ${up('md')} {
-    padding-top: 100px;
-  }
-  ${up('lg')} {
-    padding-top: 120px;
-  }
-
-  &:last-of-type {
-    padding-bottom: 80px;
-
-    ${up('md')} {
-      padding-bottom: 100px;
-    }
-    ${up('lg')} {
-      padding-bottom: 120px;
-    }
-  }
 `;
 
 const Row = styled.div`
@@ -173,10 +150,10 @@ const About = ({ path }) => {
       <Container>
         <SectionTitle data-sal="slide-up">About me</SectionTitle>
         <Row>
-          <HalfCol>
-            <Image data-sal="slide-up" fluid={image.file.childImageSharp.fluid} />
+          <HalfCol data-sal="slide-up" data-sal-delay="100">
+            <Image fluid={image.file.childImageSharp.fluid} />
           </HalfCol>
-          <HalfCol data-sal="slide-up" className="aboutme-section">
+          <HalfCol data-sal="slide-up" data-sal-delay="200" className="aboutme-section">
             <Title>
               I am
               <span className="color-secondary"> Greg Kluska</span>
